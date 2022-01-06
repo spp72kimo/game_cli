@@ -21,7 +21,6 @@ class Warrior:
 		print('Name:', self.name)
 		print('Job:', self.job)
 		print('HP:', self.hp)
-		print('MP:', self.mp)
 		print('ATK:', self.atk)
 		print('DEF:', self.defense, '\n')
 
@@ -64,7 +63,7 @@ class Mage:
 		print('DEF:', self.defense, '\n')
 
 
-class monk:
+class Monk:
 	def __init__(self,name):
 		self.name = name
 		self.job = '僧侶'
@@ -94,13 +93,13 @@ class monk:
 				if self.mp < 0:
 					self.mp = 0
 
-	def heal(self,target):
+	def healling(self,target):
 		if self.mp == 0:
 			print('法力用光了！')
 		else:
 			print(self.name, '治療->', target.name)
 			print(target.name, 'HP:', target.hp, '-> ', end='')
-			target.hp = target + self.heal
+			target.hp = target.hp + self.heal
 			self.mp -= 10
 			print(target.hp)
 			if self.mp < 0:
